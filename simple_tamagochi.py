@@ -6,31 +6,56 @@ happiness = 50
 temperature = 25
 
 # Define the avatar images
-happy_image = Image("00000:"
+happy_image = Image("09090:"
                     "09090:"
-                    "09990:"
-                    "09090:"
-                    "00000:")
-neutral_image = Image("00000:"
+                    "00900:"
+                    "99999:"
+                    "09990:")
+
+neutral_image = Image("09090:"
                       "09990:"
-                      "09090:"
-                      "09990:"
-                      "00000:")
-sad_image = Image("00000:"
-                  "09090:"
+                      "00900:"
+                      "90009:"
+                      "09990:")
+
+sad_image = Image("09090:"
+                  "90909:"
                   "00900:"
-                  "09090:"
-                  "00000:")
+                  "09990:"
+                  "00900:")
+
+surprised_image = Image("09090:"
+                        "09090:"
+                        "00900:"
+                        "90909:"
+                        "09990:")
+
+angry_image = Image("09090:"
+                    "09090:"
+                    "00900:"
+                    "99999:"
+                    "00900:")
+
+sleeping_image = Image("00000:"
+                       "09090:"
+                       "09090:"
+                       "00000:"
+                       "09990:")
 
 # Main loop
 while True:
     # Check the tamagotchi's status and adjust the avatar image accordingly
-    if happiness > 75:
+    # Assign the avatar image based on the tamagotchi's emotion
+    if happiness > 80:
         avatar = happy_image
-    elif happiness > 25:
+    elif happiness > 60:
         avatar = neutral_image
-    else:
+    elif happiness > 40:
+        avatar = surprised_image
+    elif happiness > 20:
         avatar = sad_image
+    else:
+        avatar = sleeping_image
 
     # Display the avatar image
     display.show(avatar)
